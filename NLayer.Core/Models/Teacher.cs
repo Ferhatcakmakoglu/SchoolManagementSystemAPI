@@ -11,6 +11,7 @@ namespace NLayer.Core.Models
         //Teacher name, surnmame.. is added from BaseEntityForPerson class
         public string Branch { get; set; } //Math, Science
         public string BranchType { get; set; } //Teacher or Manager
-
+        public int SchoolId { get; set; }
+        public School School { get; set; }
     }
 }
