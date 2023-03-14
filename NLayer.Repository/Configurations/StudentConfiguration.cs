@@ -28,7 +28,7 @@ namespace NLayer.Repository.Configurations
             builder.Property(x => x.Surname).IsRequired().HasMaxLength(20);
             builder.Property(x => x.PhoneNumber).HasMaxLength(11);
             builder.Property(x => x.DateOfBirth).IsRequired().HasMaxLength(10);
-            builder.Property(x => x.Gender).IsRequired();
+            builder.Property(x => x.Gender).IsRequired().HasMaxLength(1);
             builder.Property(x => x.ClassLevel).IsRequired();
             builder.Property(x => x.ClassBranch).IsRequired();
             builder.Property(x => x.ParentName).IsRequired().HasMaxLength(20);
