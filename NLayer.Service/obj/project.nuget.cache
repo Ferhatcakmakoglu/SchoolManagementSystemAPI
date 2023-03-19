@@ -1,13 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "fzMIn5fq3ziJSwlyckKN/O9lABUBaM8Tn+/F2G79k3xfOly5QrPS66YLpIC9n2xJFZ7eYOiWiOkBwgqNngL+Kg==",
+  "dgSpecHash": "D39zONFVXnYRVhMyCbgaVFY+kD3A4BlIVlfTBgx0l7vUPKuwwvr7/SRU+GGXv6KxnzCoWN9FzIGUbSNqu1DvEg==",
   "success": true,
   "projectFilePath": "C:\\Users\\Ferhat\\source\\repos\\c\\NLayerSchoolManagementSystem\\NLayer.Service\\NLayer.Service.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Ferhat\\.nuget\\packages\\automapper\\12.0.0\\automapper.12.0.0.nupkg.sha512",
+    "C:\\Users\\Ferhat\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.0\\automapper.extensions.microsoft.dependencyinjection.12.0.0.nupkg.sha512",
     "C:\\Users\\Ferhat\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\Ferhat\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
     "C:\\Users\\Ferhat\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
-    "C:\\Users\\Ferhat\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
+    "C:\\Users\\Ferhat\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\Ferhat\\.nuget\\packages\\microsoft.data.sqlclient\\5.0.1\\microsoft.data.sqlclient.5.0.1.nupkg.sha512",
     "C:\\Users\\Ferhat\\.nuget\\packages\\microsoft.data.sqlclient.sni.runtime\\5.0.1\\microsoft.data.sqlclient.sni.runtime.5.0.1.nupkg.sha512",
     "C:\\Users\\Ferhat\\.nuget\\packages\\microsoft.entityframeworkcore\\7.0.3\\microsoft.entityframeworkcore.7.0.3.nupkg.sha512",

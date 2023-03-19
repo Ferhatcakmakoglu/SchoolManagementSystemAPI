@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace NLayer.Core.Models
 {
-    public class BaseEntityForPerson
+    public abstract class BaseEntityForPerson
     {
         public int Id { get; set; }
         public string Name { get; set; }
