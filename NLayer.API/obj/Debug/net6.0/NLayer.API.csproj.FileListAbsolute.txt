@@ -5,6 +5,8 @@ C:\Users\Ferhat\source\repos\c\NLayerSchoolManagementSystem\NLayer.API\bin\Debug
 C:\Users\Ferhat\source\repos\c\NLayerSchoolManagementSystem\NLayer.API\bin\Debug\net6.0\NLayer.API.runtimeconfig.json
 C:\Users\Ferhat\source\repos\c\NLayerSchoolManagementSystem\NLayer.API\bin\Debug\net6.0\NLayer.API.dll
 C:\Users\Ferhat\source\repos\c\NLayerSchoolManagementSystem\NLayer.API\bin\Debug\net6.0\NLayer.API.pdb
+C:\Users\Ferhat\source\repos\c\NLayerSchoolManagementSystem\NLayer.API\bin\Debug\net6.0\AutoMapper.dll
+C:\Users\Ferhat\source\repos\c\NLayerSchoolManagementSystem\NLayer.API\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 C:\Users\Ferhat\source\repos\c\NLayerSchoolManagementSystem\NLayer.API\bin\Debug\net6.0\Azure.Core.dll
 C:\Users\Ferhat\source\repos\c\NLayerSchoolManagementSystem\NLayer.API\bin\Debug\net6.0\Azure.Identity.dll
 C:\Users\Ferhat\source\repos\c\NLayerSchoolManagementSystem\NLayer.API\bin\Debug\net6.0\Humanizer.dll
@@ -91,5 +93,3 @@ C:\Users\Ferhat\source\repos\c\NLayerSchoolManagementSystem\NLayer.API\obj\Debug
 C:\Users\Ferhat\source\repos\c\NLayerSchoolManagementSystem\NLayer.API\obj\Debug\net6.0\NLayer.API.pdb
 C:\Users\Ferhat\source\repos\c\NLayerSchoolManagementSystem\NLayer.API\obj\Debug\net6.0\NLayer.API.genruntimeconfig.cache
 C:\Users\Ferhat\source\repos\c\NLayerSchoolManagementSystem\NLayer.API\obj\Debug\net6.0\ref\NLayer.API.dll
-C:\Users\Ferhat\source\repos\c\NLayerSchoolManagementSystem\NLayer.API\bin\Debug\net6.0\AutoMapper.dll
-C:\Users\Ferhat\source\repos\c\NLayerSchoolManagementSystem\NLayer.API\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll

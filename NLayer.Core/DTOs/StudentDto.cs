@@ -11,5 +11,8 @@ namespace NLayer.Core.DTOs
         public int ClassLevel { get; set; }
         public string ClassBranch { get; set; }
         public int SchoolId { get; set; }
+        public string ParentName { get; set; }
+        public string ParentSurname { get; set; }
+        public string ParentPhoneNumber { get; set; }
     }
 }
