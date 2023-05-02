@@ -14,7 +14,8 @@ namespace NLayer.Core.Models
         public string Adress { get; set; }
         public string MailAdress { get; set; }
         public string PhoneNumber { get; set; }
-        public ICollection<Student> Students { get; set; }
+        //public ICollection<Student> Students { get; set; }
         public ICollection<Teacher> Teachers { get; set; }
+        
     }
 }

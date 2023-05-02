@@ -24,6 +24,9 @@ builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepositor
 builder.Services.AddScoped(typeof(IService<>), typeof(Service<>));
 builder.Services.AddScoped<IStudentsWithSchoolRepository, StudentsWithSchoolRepository>();
 builder.Services.AddScoped<IStudentsWithSchoolService, StudentWithSchoolService>();
+builder.Services.AddScoped<ISchoolWithTeacherService, SchoolWithTeacherService>();
+builder.Services.AddScoped<ISchoolWithTeacherRepository, SchoolWithTeacherRepository>();
+
 
 //AutoMapper Dahil ettik
 builder.Services.AddAutoMapper(typeof(MapProfile));

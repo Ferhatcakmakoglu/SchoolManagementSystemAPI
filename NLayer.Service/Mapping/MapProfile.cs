@@ -17,6 +17,7 @@ namespace NLayer.Service.Mapping
             CreateMap<Teacher,TeacherDto>().ReverseMap();
             CreateMap<School,SchoolDto>().ReverseMap();
             CreateMap<Student, StudentWithSchoolDto>();
+            CreateMap<School,SchoolWithTeacherDto>();
         }
     }
 }

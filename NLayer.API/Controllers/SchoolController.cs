@@ -11,11 +11,19 @@ namespace NLayer.API.Controllers
     {
         private readonly IMapper _mapper;
         public readonly IService<School> _service;
+        private readonly ISchoolWithTeacherService _schoolWithTeacherService;
 
-        public SchoolController(IMapper mapper, IService<School> service)
+        public SchoolController(IMapper mapper, IService<School> service, ISchoolWithTeacherService schoolWithTeacherService)
         {
             _mapper = mapper;
             _service = service;
+            _schoolWithTeacherService = schoolWithTeacherService;
+        }
+
+        [HttpGet("[action]/{schoolId}")]
+        public async Task<IActionResult> GetSchoolWithTeacher(int schoolId)
+        {
+            return CreateActionResult(await _schoolWithTeacherService.GetSchoolWithTeacher(schoolId));
         }
 
         [HttpGet]

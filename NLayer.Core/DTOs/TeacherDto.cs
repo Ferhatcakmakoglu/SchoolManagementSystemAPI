@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NLayer.Core.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,5 +12,6 @@ namespace NLayer.Core.DTOs
         public string Branch { get; set; } //Math, Science
         public string BranchType { get; set; } //Teacher or Manager
         public int SchoolId { get; set; }
+        
     }
 }
