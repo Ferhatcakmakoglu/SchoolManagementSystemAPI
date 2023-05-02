@@ -22,6 +22,8 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
 builder.Services.AddScoped(typeof(IService<>), typeof(Service<>));
+builder.Services.AddScoped<IStudentsWithSchoolRepository, StudentsWithSchoolRepository>();
+builder.Services.AddScoped<IStudentsWithSchoolService, StudentWithSchoolService>();
 
 //AutoMapper Dahil ettik
 builder.Services.AddAutoMapper(typeof(MapProfile));
