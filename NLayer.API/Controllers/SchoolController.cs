@@ -4,26 +4,29 @@ using Microsoft.AspNetCore.Mvc;
 using NLayer.Core.DTOs;
 using NLayer.Core.Models;
 using NLayer.Core.Services;
+using NLayer.Service.Services;
 
 namespace NLayer.API.Controllers
 {
     public class SchoolController : BaseController
     {
         private readonly IMapper _mapper;
-        public readonly IService<School> _service;
-        private readonly ISchoolWithTeacherService _schoolWithTeacherService;
-
+        //public readonly IService<School> _service;
+        //private readonly ISchoolWithTeacherService _schoolWithTeacherService;
+        private readonly ISchoolWithTeacherService _service;
         public SchoolController(IMapper mapper, IService<School> service, ISchoolWithTeacherService schoolWithTeacherService)
         {
             _mapper = mapper;
-            _service = service;
-            _schoolWithTeacherService = schoolWithTeacherService;
+            //_service = service;
+            //_schoolWithTeacherService = schoolWithTeacherService;
+            _service = schoolWithTeacherService;
         }
 
         [HttpGet("[action]/{schoolId}")]
         public async Task<IActionResult> GetSchoolWithTeacher(int schoolId)
         {
-            return CreateActionResult(await _schoolWithTeacherService.GetSchoolWithTeacher(schoolId));
+            //return CreateActionResult(await _schoolWithTeacherService.GetSchoolWithTeacher(schoolId));
+            return CreateActionResult(await _service.GetSchoolWithTeacher(schoolId));
         }
 
         [HttpGet]

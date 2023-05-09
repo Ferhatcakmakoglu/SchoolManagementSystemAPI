@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using NLayer.Core.DTOs;
 using NLayer.Core.Models;
 using NLayer.Core.Services;
+using NLayer.Service.Services;
 
 namespace NLayer.API.Controllers
 {
@@ -11,19 +12,19 @@ namespace NLayer.API.Controllers
     public class StudentsController : BaseController
     {
         private readonly IMapper _mapper;
-        private readonly IService<Student> _service;
-        private readonly IStudentsWithSchoolService _studentsWithSchoolService;
-        public StudentsController(IMapper mapper, IService<Student> service, IStudentsWithSchoolService studentsWithSchoolService)
+        private readonly IStudentsWithSchoolService _service;
+        //IService<Stundet> icinde implemente edilmis zaten
+        public StudentsController(IMapper mapper, IStudentsWithSchoolService studentsWithSchoolService)
         {
             _mapper = mapper;
-            _service = service;
-            _studentsWithSchoolService = studentsWithSchoolService;
+            _service =  studentsWithSchoolService;
         }
 
         [HttpGet("[action]")]
         public async Task<IActionResult> GetStudentsWithSchool()
         {
-            return CreateActionResult(await _studentsWithSchoolService.GetStudentsWithSchool());
+            //return CreateActionResult(await _studentsWithSchoolService.GetStudentsWithSchool());
+            return CreateActionResult(await _service.GetStudentsWithSchool());
         }
 
         [HttpGet]
