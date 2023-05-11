@@ -1,8 +1,11 @@
+using Autofac;
+using Autofac.Extensions.DependencyInjection;
 using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using NLayer.API.Filters;
 using NLayer.API.Middlewares;
+using NLayer.API.Modules;
 using NLayer.Core.Repositories;
 using NLayer.Core.Services;
 using NLayer.Core.UnitOfWorks;
@@ -43,21 +46,29 @@ builder.Services.AddControllers(options => options.Filters.Add(new ValidateFilte
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-//NotFoundFilter Tanýmlama
-builder.Services.AddScoped(typeof(NotFoundFilter<>));
 
+
+/*
+   !!
+        BU KISIM AUTOFAC ILE ISEVSIZ HALE GELDI!!!
+   !!
+ */
 //Interface ler ile ilgili class lar birlestirildi
-builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+/*builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
 builder.Services.AddScoped(typeof(IService<>), typeof(Service<>));
 builder.Services.AddScoped<IStudentsWithSchoolRepository, StudentsWithSchoolRepository>();
 builder.Services.AddScoped<IStudentsWithSchoolService, StudentWithSchoolService>();
 builder.Services.AddScoped<ISchoolWithTeacherService, SchoolWithTeacherService>();
 builder.Services.AddScoped<ISchoolWithTeacherRepository, SchoolWithTeacherRepository>();
+*/
 
 
+//NotFoundFilter Tanýmlama
+builder.Services.AddScoped(typeof(NotFoundFilter<>));
 //AutoMapper Dahil ettik
 builder.Services.AddAutoMapper(typeof(MapProfile));
+
 
 //appsetting.json daki SqlConnection ýn yeri soylendi
 builder.Services.AddDbContext<AppDbContext>(x =>
@@ -67,6 +78,11 @@ builder.Services.AddDbContext<AppDbContext>(x =>
         option.MigrationsAssembly(Assembly.GetAssembly(typeof(AppDbContext)).GetName().Name);
     });
 });
+
+//Autofac dahil ettigimiz yer 
+builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory());
+//Tek bir module oldugu icin boyle hallettik. Birden fazla module olsaydý her birini bu sekil ekleyecektik
+builder.Host.ConfigureContainer<ContainerBuilder>(containerBuilder => containerBuilder.RegisterModule(new RepoServiceModule()));
 
 var app = builder.Build();
 
