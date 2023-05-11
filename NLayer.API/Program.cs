@@ -2,6 +2,7 @@ using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using NLayer.API.Filters;
+using NLayer.API.Middlewares;
 using NLayer.Core.Repositories;
 using NLayer.Core.Services;
 using NLayer.Core.UnitOfWorks;
@@ -18,6 +19,12 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 
 
+//Burada Fluent Validaton un kendi Filter ini baskýladýk yani kendi filter imizi çalýþtýrdýk
+builder.Services.Configure<ApiBehaviorOptions>(options =>
+{
+    options.SuppressModelStateInvalidFilter = true;
+});
+
 //Filter lerimiz eklendi options ile. Validations lar ise x ile eklendi
 builder.Services.AddControllers(options => options.Filters.Add(new ValidateFilterAttribute())).AddFluentValidation(x =>
 {
@@ -27,12 +34,10 @@ builder.Services.AddControllers(options => options.Filters.Add(new ValidateFilte
 });
 
 
-//Burada Fluent Validaton un kendi Filter ini baskýladýk yani kendi filter imizi çalýþtýrdýk
-builder.Services.Configure<ApiBehaviorOptions>(options =>
-{
-    options.SuppressModelStateInvalidFilter = true;
-});
 
+
+
+ 
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
@@ -70,6 +75,11 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+
+//kendi ekledigimiz middleware implement
+app.UserCustomException();
+
 
 app.UseAuthorization();
 
