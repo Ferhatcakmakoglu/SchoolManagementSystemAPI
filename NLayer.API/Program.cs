@@ -43,6 +43,9 @@ builder.Services.AddControllers(options => options.Filters.Add(new ValidateFilte
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+//NotFoundFilter Tanýmlama
+builder.Services.AddScoped(typeof(NotFoundFilter<>));
+
 //Interface ler ile ilgili class lar birlestirildi
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
