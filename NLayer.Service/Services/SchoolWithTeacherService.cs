@@ -4,6 +4,7 @@ using NLayer.Core.Models;
 using NLayer.Core.Repositories;
 using NLayer.Core.Services;
 using NLayer.Core.UnitOfWorks;
+using NLayer.Service.Exceptions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,6 +26,10 @@ namespace NLayer.Service.Services
         public async Task<CustomResponseDto<SchoolWithTeacherDto>> GetSchoolWithTeacher(int schoolId)
         {
             var schools = await _schoolWithTeacherRepository.GetSchoolWithTeacher(schoolId);
+            if(schools == null)
+            {
+                throw new NotFoundException($"{typeof(School).Name} ({schoolId}) not Found!");
+            }
             var schoolsDto = _mapper.Map<SchoolWithTeacherDto>(schools);
             return CustomResponseDto<SchoolWithTeacherDto>.Succes(200, schoolsDto);
         }

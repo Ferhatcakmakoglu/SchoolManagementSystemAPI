@@ -78,7 +78,7 @@ app.UseHttpsRedirection();
 
 
 //kendi ekledigimiz middleware implement
-app.UserCustomException();
+app.UseCustomException();
 
 
 app.UseAuthorization();
